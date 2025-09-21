@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SIGHT Real Estate Development</title>
+  <meta name="description" content="SIGHT Real Estate Development — Sustainable solutions and strategic locations for office & commercial spaces." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Tajawal:wght@400;700;800&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "@google/genai": "https://esm.sh/@google/genai@^0.8.0",
+        "marked": "https://esm.sh/marked@^15.0.8"
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- خلفية فيديو عامة للموقع -->
+  <div class="site-bg" aria-hidden="true">
+    <video class="site-bg-video" autoplay muted loop playsinline>
+      <source src="https://ik.imagekit.io/kq7rvhenqr/Untitled-%D9%A2%D9%A0%D9%A2%D9%A5-%D9%A0%D9%A9-%D9%A1%D9%A8%20%D9%A0%D9%A8%20%D9%A3%D9%A3%20%D9%A0%D9%A2(copy)-2.mp4" type="video/mp4">
+    </video>
+    <div class="site-bg-overlay"></div>
+  </div>
+
+  <!-- شريط سوشيال عائم -->
+  <aside class="social" aria-label="Social links">
+    <a href="https://www.facebook.com/SIGHTRealEstate.eg" target="_blank" aria-label="Facebook" rel="noopener" title="Facebook">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </a>
+    <a href="https://www.instagram.com/sightrealestate.eg" target="_blank" aria-label="Instagram" rel="noopener" title="Instagram">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+    </a>
+    <a href="https://wa.me/201099993903" target="_blank" aria-label="WhatsApp" rel="noopener" title="WhatsApp">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 12c0 1.74.45 3.48 1.34 5l-1.4 5.02 5.13-1.37c1.45.81 3.09 1.25 4.74 1.25h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"></path></svg>
+    </a>
+    <a href="tel:+201099993903" aria-label="Call" title="Call">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 2 4.11V7a2 2 0 0 0 1.72 2l2.81.7a2 2 0 0 1 1.27 2.11L7.53 13a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45l2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+    <button id="qrOpen" aria-label="QR Code" title="QR Code">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="5" height="5" x="3" y="3" rx="1"></rect><rect width="5" height="5" x="16" y="3" rx="1"></rect><rect width="5" height="5" x="3" y="16" rx="1"></rect><path d="M21 16h-3a2 2 0 0 0-2 2v3"></path><path d="M21 21v.01"></path><path d="M12 7v3a2 2 0 0 1-2 2H7"></path><path d="M3 12h.01"></path><path d="M12 3h.01"></path><path d="M12 16v.01"></path><path d="M16 12h1"></path><path d="M21 12v.01"></path><path d="M12 21v-1"></path></svg>
+    </button>
+  </aside>
+
+  <header class="topbar">
+    <div class="container topbar-wrap">
+      <a href="#" class="brand">
+        <span class="logo" aria-hidden="true"></span>
+        <span>SIGHT</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#gallery" data-i18n="navProps">Properties</a>
+        <a href="#store" data-i18n="navStore">Services</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+        <a href="#about" data-i18n="navAbout">About</a>
+      </nav>
+      <div class="controls">
+        <span class="switch" title="Toggle theme">
+          <button id="themeToggle" aria-label="Theme">🌙/☀️</button>
+        </span>
+        <span class="switch" title="Language">
+          <button id="langToggle">EN / العربية</button>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" aria-label="Hero slider">
+    <div class="slides" id="slides">
+      <div class="slide is-active" style="background-image:url('https://i.ibb.co/99MV2rn0/10.png')"></div>
+      <div class="slide" style="background-image:url('https://i.ibb.co/DfMPbtX3/5.png')"></div>
+      <div class="slide" style="background-image:url('https://i.ibb.co/vxbVjcM0/7.png')"></div>
+      <div class="slide" style="background-image:url('https://i.ibb.co/27zHbgMF/8.png')"></div>
+    </div>
+    <div class="hero-overlay">
+      <h1 class="title" data-i18n="heroTitle">SIGHT REAL ESTATE <strong>DEVELOPMENT</strong></h1>
+      <p class="tagline" data-i18n="heroTag">Sustainable solutions and strategic locations for office & commercial spaces.</p>
+      <div class="cta-row">
+        <a class="cta" href="#gallery" data-i18n="ctaView">View Gallery</a>
+        <a class="cta outline" href="https://wa.me/201099993903" target="_blank" rel="noopener" data-i18n="ctaWhatsapp">WhatsApp</a>
+      </div>
+    </div>
+    <div class="arrows">
+      <button class="arrow" id="prev" aria-label="Previous">‹</button>
+      <button class="arrow" id="next" aria-label="Next">›</button>
+    </div>
+    <div class="dots" id="dots" aria-hidden="true"></div>
+  </section>
+
+  <main>
+    <!-- جاليري العقارات -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="galleryTitle">PROPERTY GALLERY</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="thumb" style="background-image:url('https://i.ibb.co/mCXMSSKW/Whisk-7eb8fcd38f784ec80f54b416f43923e5dr.jpg')"></div>
+            <div class="card-body">
+              <h3 class="card-title">Mazarine New Alamein</h3>
+              <p class="price">Contact for price</p>
+              <ul class="facts">
+                <li>Swimming pools, malls, restaurants, clinics, 24/7 security.</li>
+                <li>Enjoy modern life services in a luxurious compound.</li>
+              </ul>
+              <button class="btn book">Book Now</button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="thumb" style="background-image:url('https://i.ibb.co/BV0R1bVh/Whisk-ff8a25183e6593f8e80440e1f16936f5dr.jpg')"></div>
+            <div class="card-body">
+              <h3 class="card-title">The Towers</h3>
+              <p class="price">35,760,000 LE</p>
+              <ul class="facts">
+                <li>217 m² / 2 rooms</li>
+                <li>1.2% down payment (429,120 LE)</li>
+                <li>Annual installments</li>
+              </ul>
+              <button class="btn book">Book Now</button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="thumb" style="background-image:url('https://i.ibb.co/Hfb5yLB7/Whisk-b1b928524b38ce0bb1c4c42721665c96dr.jpg')"></div>
+            <div class="card-body">
+              <h3 class="card-title">Seaside Residence</h3>
+               <p class="price">9,187,000 LE</p>
+              <ul class="facts">
+                <li>120 m² Latin Quarter, sea view</li>
+                <li>1.2% down payment (110,244 LE)</li>
+                <li>Monthly installment: 27,276 LE</li>
+              </ul>
+              <button class="btn book">Book Now</button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="thumb" style="background-image:url('https://i.ibb.co/F4KZVW2w/Whisk-a5271090ae21e90b6cc417a435a0c9c3dr.jpg')"></div>
+            <div class="card-body">
+              <h3 class="card-title">Mazarine New Alamein</h3>
+              <p class="price">Contact for price</p>
+              <ul class="facts">
+                <li>Strategic location next to Rixos.</li>
+                <li>Steps away from O Mall.</li>
+                <li>Fully finished apartments.</li>
+              </ul>
+              <button class="btn book">Book Now</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- بانر المزارين -->
+    <section class="section">
+      <div class="container">
+        <div class="feature">
+          <div class="wrap">
+            <div class="info">
+              <h3 class="section-title" data-i18n="featureTitle">Live Your Independence in Mazarine</h3>
+              <div class="badges">
+                <span class="badge"><strong>2</strong><small data-i18n="rooms">Bedrooms</small></span>
+                <span class="badge"><strong>2</strong><small data-i18n="baths">Bathrooms</small></span>
+                <span class="badge"><strong>1</strong><small data-i18n="garage">Garage</small></span>
+                <span class="badge"><strong>1</strong><small data-i18n="kitchen">Kitchen</small></span>
+              </div>
+              <div class="dp"><small data-i18n="downpayment">Down payment</small> <strong>1%</strong></div>
+              <p class="muted" data-i18n="featureBullets">Fully finished apartments with gas, water, and electricity. Modern facades and elegant architecture. Strategic location next to Rixos and Marina 7.</p>
+              <a class="cta book" href="#contact" data-i18n="bookNow">Book Now</a>
+            </div>
+            <div class="image" style="background-image:url('https://i.ibb.co/dJML7pMG/Dark-Blue-and-Gold-Minimalist-Real-Estate-Facebook-Ad.png')"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- تبويبات بسيطة -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title" data-i18n="connectTitle">Connect With Us</h2>
+        <div class="segbar" role="tablist">
+          <button class="seg-btn is-active" data-target="panel-about" data-i18n="aboutTab">About Us</button>
+          <button class="seg-btn" data-target="panel-map" data-i18n="locTab">Our Location</button>
+        </div>
+        <div class="segpanels">
+          <section id="panel-about" class="panel show">
+            <article class="about-card">
+              <div class="about-hero" style="background-image:url('https://i.ibb.co/ZzBR3fDD/Untitled-design.png')" aria-hidden="true"></div>
+              <div class="about-text">
+                <p>SIGHT Real Estate Development is a leading force in the Egyptian real estate market. We specialize in premium office and commercial spaces designed to empower businesses. Our portfolio reflects a commitment to quality, sustainability, and strategic location.</p>
+                <p>With a confident presence in every governorate, we pair local expertise with international standards to deliver properties that become landmarks of success. Our mission is to create value for our clients and communities through innovative, sustainable real estate solutions.</p>
+              </div>
+            </article>
+          </section>
+          <section id="panel-map" class="panel">
+            <div class="map-embed">
+              <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen src="https://www.google.com/maps?q=New+Alamein&output=embed" title="Our Location"></iframe>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+    
+    <!-- فورم تواصل -->
+    <section id="contact" class="section contact">
+        <div class="form" aria-label="Quick contact form">
+          <div class="form-hero" style="background-image:url('https://i.ibb.co/0RS3Dvhd/f23dfca5-21bc-4bf8-a561-1f012c3e7582.png')" aria-hidden="true"></div>
+          <h4 class="section-title" data-i18n="formTitle">Leave your info & we will contact you</h4>
+          <label class="field"><span data-i18n="name">Name</span><input id="fName" placeholder="Your name" data-i18n-placeholder="namePh"/></label>
+          <label class="field"><span data-i18n="email">Email</span><input id="fEmail" placeholder="your@email.com" data-i18n-placeholder="emailPh"/></label>
+          <label class="field"><span data-i18n="phone">Phone</span><input id="fPhone" placeholder="0100 000 0000" data-i18n-placeholder="phonePh"/></label>
+          <button class="send btn" id="whatsSend" data-i18n="sendWhats">Send via WhatsApp</button>
+        </div>
+    </section>
+
+    <!-- AI Story Section -->
+    <section id="ai-story" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="storyTitle">AI-Generated Story</h2>
+        <div id="story-container">
+          <!-- Story will be generated here -->
+        </div>
+        <div id="regenerate-container" style="display: none;">
+          <button id="regenerate-button" class="cta">Regenerate Story</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- QR Modal + Audio -->
+  <div class="qr-modal" id="qrModal" aria-modal="true" role="dialog">
+    <div class="qr-box">
+      <h5>Scan & Contact</h5>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fwa.me%2F201099993903" width="220" height="220" alt="QR to WhatsApp"/>
+      <button class="qr-close" id="qrClose">Close</button>
+    </div>
+  </div>
+  <audio id="radioAudio" preload="none" src="https://stream-uk1.radioparadise.com/aac-320"></audio>
+
+  <!-- شريط الكوكيز -->
+  <div class="cookie" id="cookieBar" role="region" aria-label="Cookie Notice">
+    <div class="bar">
+      <span data-i18n="cookieText">This website uses cookies to ensure you get the best experience on our website.</span>
+      <button class="ok" id="cookieOk" data-i18n="cookieBtn">Got it!</button>
+    </div>
+  </div>
+
+  <script>
+  // ===== سلايدر الهيدر =====
+  (function(){
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const dots = document.getElementById('dots');
+    if (!slides.length || !dots) return;
+    let idx = 0, timer;
+    function renderDots(){
+      dots.innerHTML = '';
+      slides.forEach((_,i)=>{
+        const d=document.createElement('b');
+        d.className='dot'+(i===idx?' is-active':'');
+        d.addEventListener('click',()=>go(i));
+        dots.appendChild(d);
+      });
+    }
+    function go(n){
+      slides[idx].classList.remove('is-active');
+      idx=(n+slides.length)%slides.length;
+      slides[idx].classList.add('is-active');
+      renderDots();
+    }
+    function next(){ go(idx+1); }
+    function prev(){ go(idx-1); }
+    function start(){ stop(); timer=setInterval(next,5000); }
+    function stop(){ if(timer) clearInterval(timer); }
+    document.getElementById('next').addEventListener('click',()=>{next();start();});
+    document.getElementById('prev').addEventListener('click',()=>{prev();start();});
+    document.querySelector('.hero').addEventListener('mouseenter', stop);
+    document.querySelector('.hero').addEventListener('mouseleave', start);
+    renderDots(); start();
+  })();
+
+  // ===== Book buttons → Scroll إلى الفورم =====
+  document.querySelectorAll('.book').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      e.preventDefault();
+      document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+    });
+  });
+
+  // ===== إرسال واتساب مع تجميع الداتا =====
+  document.getElementById('whatsSend').addEventListener('click', ()=>{
+    const n = document.getElementById('fName').value.trim();
+    const m = document.getElementById('fPhone').value.trim();
+    const e = document.getElementById('fEmail').value.trim();
+    if (!n || !m) {
+      alert(i18n[currentLang].formAlert);
+      return;
+    }
+    const dict = i18n[currentLang].whatsAppMsg;
+    const parts = [
+      `${dict.name}: ${n}`,
+      `${dict.phone}: ${m}`
+    ];
+    if (e) {
+      parts.push(`${dict.email}: ${e}`);
+    }
+    parts.push(dict.footer);
+    const text = encodeURIComponent(parts.join('\n'));
+    window.open(`https://wa.me/201099993903?text=${text}`, '_blank');
+  });
+
+  // ===== شريط الكوكيز =====
+  (function(){
+    const bar = document.getElementById('cookieBar');
+    if(!localStorage.getItem('cookie_ack')){ bar.classList.add('show'); }
+    document.getElementById('cookieOk').addEventListener('click',()=>{
+      localStorage.setItem('cookie_ack','1');
+      bar.classList.remove('show');
+    });
+  })();
+
+  // ===== تبديل الثيم (فاتح/غامق) =====
+  document.getElementById('themeToggle').addEventListener('click', ()=>{
+    const root = document.documentElement;
+    root.classList.toggle('light');
+    localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+  });
+  (function(){
+    const saved = localStorage.getItem('theme');
+    if(saved==='light') document.documentElement.classList.add('light');
+  })();
+
+  // ===== تعدد اللغات بسيط (AR/EN) =====
+  const i18n = {
+    ar: {
+      navProps:'العقارات', navContact:'تواصل', navAbout:'عنّا',
+      heroTitle:'SIGHT REAL ESTATE <strong>DEVELOPMENT</strong>', heroTag:'حلول مستدامة ومواقع استراتيجية للمكاتب والمساحات التجارية.',
+      ctaView:'تصفُّح المعروض', ctaWhatsapp:'واتساب',
+      galleryTitle:'PROPERTY GALLERY', searchPlaceholder:'ابحث عن عقار…',
+      featureTitle:'عيش استقلالك في مزارين', rooms:'غرف', baths:'حمام', garage:'جراج', kitchen:'مطبخ', downpayment:'المقدم',
+      featureBullets:'شقق متشطبة بالكامل (غاز ومياه وكهرباء). واجهات حديثة وتصميم أنيق. موقع استراتيجي بجوار ركسوس ومارينا 7. استلام خلال 6 شهور — تقسيط حتى 15 سنة.',
+      bookNow:'احجز الآن',
+      formTitle:'اترك بياناتك ونتواصل معك', name:'الاسم', email:'البريد', phone:'موبايل', namePh:'اسمك', emailPh:'example@mail.com', phonePh:'0100 000 0000', sendWhats:'إرسال عبر واتساب',
+      aboutTab:'عن SIGHT', locTab:'مواقعنا', connectTitle:'تواصل معنا', credits:'© SIGHT Real Estate Development — حضور قوي بالسوق المصري، متخصصون في المكاتب والمساحات التجارية.',
+      cookieText:'هذا الموقع يستخدم ملفات تعريف الارتباط لضمان حصولك على أفضل تجربة.', cookieBtn:'مفهوم', navStore:'الخدمات',
+      formAlert: 'الرجاء إدخال الاسم ورقم الهاتف.',
+      whatsAppMsg: { name: 'الاسم', phone: 'الهاتف', email: 'البريد', footer: '(مُرسل من موقع SIGHT)' },
+      storyTitle: 'قصة من إنشاء الذكاء الاصطناعي'
+    },
+    en: {
+      navProps:'Properties', navContact:'Contact', navAbout:'About',
+      heroTitle:'SIGHT REAL ESTATE <strong>DEVELOPMENT</strong>', heroTag:'Sustainable solutions and strategic locations for office & commercial spaces.',
+      ctaView:'View Gallery', ctaWhatsapp:'WhatsApp',
+      galleryTitle:'PROPERTY GALLERY', searchPlaceholder:'Search properties…',
+      featureTitle:'Live Your Independence in Mazarine', rooms:'Bedrooms', baths:'Bathrooms', garage:'Garage', kitchen:'Kitchen', downpayment:'Down payment',
+      featureBullets:'Fully finished apartments with gas, water, and electricity. Modern facades and elegant architecture. Strategic location near Rixos & Marina 7. Delivery within 6 months — Installments up to 15 years.',
+      bookNow:'Book Now',
+      formTitle:'Leave your info & we will contact you', name:'Name', email:'Email', phone:'Phone', namePh:'Your name', emailPh:'your@email.com', phonePh:'0100 000 0000', sendWhats:'Send via WhatsApp',
+      aboutTab:'About SIGHT', locTab:'Our Locations', connectTitle:'Connect With Us', credits:'© SIGHT Real Estate Development — Strong presence across Egypt; offices and commercial specialists.',
+      cookieText:'This website uses cookies to ensure you get the best experience on our website.', cookieBtn:'Got it!', navStore:'Services',
+      formAlert: 'Please fill in your name and phone number.',
+      whatsAppMsg: { name: 'Name', phone: 'Phone', email: 'Email', footer: '(Sent from SIGHT website)' },
+      storyTitle: 'AI-Generated Story'
+    }
+  };
+  let currentLang = 'en';
+  function applyLang(lang){
+    currentLang = lang;
+    const dict = i18n[lang];
+    document.documentElement.lang = (lang==='ar'?'ar':'en');
+    document.documentElement.dir  = (lang==='ar'?'rtl':'ltr');
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const key = el.getAttribute('data-i18n');
+      if(dict[key]!==undefined){ el.innerHTML = dict[key]; }
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+      const key = el.getAttribute('data-i18n-placeholder');
+      if(dict[key]!==undefined){ el.setAttribute('placeholder', dict[key]); }
+    });
+    localStorage.setItem('lang', lang);
+  }
+  document.getElementById('langToggle').addEventListener('click', ()=>{
+    applyLang(currentLang==='ar'?'en':'ar');
+  });
+  (function(){
+    const saved = localStorage.getItem('lang');
+    if (saved === 'ar') {
+      applyLang('ar');
+    } else {
+      applyLang('en');
+    }
+  })();
+
+  // ===== إضافات: QR =====
+  (function(){
+    const qrOpen = document.getElementById('qrOpen');
+    const qrModal = document.getElementById('qrModal');
+    const qrClose = document.getElementById('qrClose');
+    if(qrOpen && qrModal){
+      qrOpen.addEventListener('click', (e)=>{e.preventDefault(); qrModal.classList.add('show');});
+      qrClose.addEventListener('click', ()=> qrModal.classList.remove('show'));
+      qrModal.addEventListener('click', (e)=>{ if(e.target===qrModal) qrModal.classList.remove('show'); });
+    }
+  })();
+  // تبديل تبويبات (About / Location)
+  (function(){
+    const btns=[...document.querySelectorAll('.seg-btn')];
+    const panels=[...document.querySelectorAll('.panel')];
+    btns.forEach(b=>b.addEventListener('click',()=>{
+      btns.forEach(x=>x.classList.remove('is-active'));
+      b.classList.add('is-active');
+      panels.forEach(p=>p.classList.remove('show'));
+      const t=document.getElementById(b.dataset.target);
+      if(t) t.classList.add('show');
+    }));
+  })();
+  </script>
+  <script type="module" src="index.tsx"></script>
+</body>
+</html>
